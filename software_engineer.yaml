@@ -1,0 +1,59 @@
+role: "Backend Software Engineer — Screening"
+
+# ── Reference Q&A bank ────────────────────────────────────────────────
+# To add a question: copy a block below and edit it. No code changes needed.
+#   id           : unique short id
+#   question     : what the agent asks aloud
+#   ideal_answer : private reference (NEVER read aloud before the attempt)
+#   key_points   : what the grader checks the candidate covered
+
+questions:
+  - id: q1
+    question: "Walk me through what happens, end to end, when you type a URL into a browser and hit enter."
+    ideal_answer: "DNS resolves the domain to an IP, a TCP handshake (and TLS if HTTPS) is established, an HTTP request is sent, the server processes it and returns a response, the browser parses the HTML, fetches assets, and renders the DOM."
+    key_points: ["DNS lookup", "TCP/TLS handshake", "HTTP request/response", "server processing", "browser rendering"]
+
+  - id: q2
+    question: "What's the difference between a process and a thread, and when would you choose one over the other?"
+    ideal_answer: "Processes have isolated memory; threads share the parent's memory. Threads are lighter and good for I/O-bound concurrency within one app; separate processes give isolation and bypass the GIL for CPU-bound work in Python."
+    key_points: ["memory isolation vs shared", "threads are lighter", "I/O-bound vs CPU-bound", "GIL / parallelism"]
+
+  - id: q3
+    question: "You have a slow database query in production. How do you diagnose and fix it?"
+    ideal_answer: "Reproduce it, run EXPLAIN/ANALYZE to read the query plan, look for missing indexes or full table scans, check for N+1 patterns from the app layer, then fix via indexing, query rewrite, caching, or denormalization, and measure before and after."
+    key_points: ["EXPLAIN / query plan", "indexes vs full scans", "N+1 from app layer", "caching", "measure improvement"]
+
+  - id: q4
+    question: "Explain REST versus RPC, and when you'd reach for something like gRPC."
+    ideal_answer: "REST is resource-oriented over HTTP verbs; RPC is action/method-oriented. gRPC uses protobuf over HTTP/2, good for low-latency internal service-to-service calls and streaming, while REST is better for public, cacheable, human-debuggable APIs."
+    key_points: ["resource vs action oriented", "protobuf / HTTP/2", "internal vs public APIs", "streaming / latency"]
+
+  - id: q5
+    question: "How would you design a rate limiter for an API?"
+    ideal_answer: "Use a token bucket or sliding-window counter, keep the state in Redis for distributed enforcement, key it by user/IP/API-key, and return 429 with a Retry-After header. Consider burst handling and atomic updates."
+    key_points: ["token bucket / sliding window", "Redis for shared state", "key by user/IP", "429 + Retry-After", "atomicity"]
+
+  - id: q6
+    question: "What is idempotency and why does it matter for a payments API?"
+    ideal_answer: "An idempotent operation gives the same result if repeated. For payments, the client sends an idempotency key so that retries after a timeout don't double-charge; the server dedupes on that key."
+    key_points: ["same result on repeat", "idempotency key", "safe retries", "prevents double-charge"]
+
+  - id: q7
+    question: "Describe how you'd take a feature from a ticket all the way to production safely."
+    ideal_answer: "Clarify requirements, write tests, implement on a branch, get a code review, run CI, deploy behind a feature flag, roll out gradually with monitoring, and keep a rollback plan."
+    key_points: ["tests", "code review + CI", "feature flag", "gradual rollout + monitoring", "rollback plan"]
+
+  - id: q8
+    question: "SQL versus NoSQL — how do you decide for a new service?"
+    ideal_answer: "SQL suits relational data, strong consistency, and complex joins/transactions. NoSQL suits flexible schemas, high write throughput, horizontal scale, or specific access patterns. Decide based on access pattern and consistency needs, not hype."
+    key_points: ["relational + ACID", "flexible schema / scale", "access-pattern driven", "consistency needs"]
+
+  - id: q9
+    question: "Tell me about a technical decision you made that you later regretted, and what you learned."
+    ideal_answer: "A specific real example, honest ownership of the mistake, the tradeoff that was missed, and a concrete lesson applied later. This is behavioural — judge structure and self-awareness, not a single correct answer."
+    key_points: ["specific concrete example", "ownership, not blame", "the tradeoff missed", "lesson applied later"]
+
+  - id: q10
+    question: "How do you make sure the code you ship is reliable when you can't possibly test every case?"
+    ideal_answer: "Layered testing (unit/integration/e2e), defensive coding and input validation, observability through logs/metrics/alerts, gradual rollout, and fast rollback. Accept you can't catch everything and design to detect and recover quickly."
+    key_points: ["testing layers", "validation / defensive code", "observability + alerts", "detect and recover fast"]

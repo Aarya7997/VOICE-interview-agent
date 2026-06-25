@@ -1,0 +1,46 @@
+role: "Customer Support Representative — Screening"
+
+# A second set exists only to prove the point: it was added with ZERO code
+# changes. Dropping this file into questions/ makes it appear in the app's
+# question-set dropdown automatically.
+
+questions:
+  - id: q1
+    question: "A customer is angry that their order arrived damaged. How do you open the conversation?"
+    ideal_answer: "Acknowledge and empathise first, apologise sincerely for the experience, then reassure them you'll fix it before asking for details. Lead with the person, not the policy."
+    key_points: ["empathise / acknowledge first", "sincere apology", "reassure you'll resolve it", "person before policy"]
+
+  - id: q2
+    question: "How do you handle a question you don't know the answer to?"
+    ideal_answer: "Be honest that you need to check rather than guessing, tell them you'll find out, set a clear expectation for when you'll follow up, and actually follow through or escalate."
+    key_points: ["honesty, don't guess", "say you'll find out", "set a timeframe", "follow up or escalate"]
+
+  - id: q3
+    question: "Walk me through how you'd de-escalate a furious customer."
+    ideal_answer: "Stay calm, let them vent without interrupting, acknowledge their frustration, take ownership, focus on a concrete next step, and avoid getting defensive."
+    key_points: ["stay calm", "let them vent / listen", "acknowledge feelings", "take ownership", "move to a solution"]
+
+  - id: q4
+    question: "What does good customer service mean to you?"
+    ideal_answer: "Solving the customer's problem efficiently while making them feel heard and valued. Looking for genuine reflection, not a textbook line."
+    key_points: ["solve the problem", "make them feel heard", "efficiency", "genuine, specific answer"]
+
+  - id: q5
+    question: "A customer asks for a refund that's against policy. What do you do?"
+    ideal_answer: "Explain the policy clearly and kindly, show you understand their position, look for an alternative you can offer, and escalate if it's a genuine edge case rather than a flat 'no'."
+    key_points: ["explain policy kindly", "empathise", "offer an alternative", "escalate edge cases"]
+
+  - id: q6
+    question: "How do you keep quality consistent when handling many tickets at once?"
+    ideal_answer: "Prioritise by urgency, use templates as a starting point but personalise them, stay organised with notes, and never rush a reply so much that it feels generic."
+    key_points: ["prioritise by urgency", "templates + personalisation", "organised notes", "don't sacrifice quality for speed"]
+
+  - id: q7
+    question: "Tell me about a time you turned an unhappy customer into a happy one."
+    ideal_answer: "A specific real example: the problem, what you did, and the positive outcome. Judge structure (situation-action-result) and ownership, not a perfect story."
+    key_points: ["specific example", "the problem", "your action", "positive result"]
+
+  - id: q8
+    question: "Why do you want to work in customer support?"
+    ideal_answer: "A genuine motivation — enjoying helping people, problem-solving, communication — tied to something specific rather than a generic 'I'm a people person'."
+    key_points: ["genuine motivation", "enjoys helping / problem-solving", "specific, not generic"]
