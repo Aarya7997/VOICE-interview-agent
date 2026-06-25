@@ -1,0 +1,25 @@
+# ── Voice Interview Agent — main config ───────────────────────────────
+# Change anything here without touching code.
+
+language: en                 # en | hi | de  (also switchable in the UI sidebar)
+question_set: software_engineer   # -> loads questions/software_engineer.yaml
+max_attempts: 1              # follow-ups allowed per question before moving on
+follow_ups: false           # false = no follow-ups at all (clean demo mode)
+num_questions: 2          # how many questions to ask this session (0 = all)
+
+stt:
+  model: whisper-large-v3    # Groq Whisper
+
+llm:
+  model: llama-3.3-70b-versatile   # Groq
+  temperature: 0.4
+
+tts:
+  provider: elevenlabs       # elevenlabs | gtts  (auto-falls back to gtts if no key)
+  voice_id: 21m00Tcm4TlvDq8ikWAM   # ElevenLabs "Rachel" (multilingual v2)
+  model: eleven_multilingual_v2
+  settings:                  # tune how human/expressive the voice sounds
+    stability: 0.4           # lower = more expressive & varied (0-1)
+    similarity_boost: 0.75   # how closely it sticks to the voice (0-1)
+    style: 0.45              # adds emotional inflection (0-1)
+    use_speaker_boost: true  # clarity boost
